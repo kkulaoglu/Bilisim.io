@@ -11,15 +11,16 @@ namespace Tuples
         static void Main(string[] args)
         {
             // Tip tanımıyla gösterimi
-            (double lat, double long, string locationName) tuple = GetCoordinate("istanbul");
-            Console.WriteLine(String.Format("{0} coordinate is lat: {1} - long: {2}", tuple.locationName, tuple.lat, tuple.long));
+            (double lat, double lng, string locationName) tuple = GetCoordinate("istanbul");
+            Console.WriteLine(String.Format("{0} koordinatları enlem: {1} - boylam: {2}", tuple.locationName, tuple.lat, tuple.lng));
+           
             // var anahtar kelimesi ile kullanımı
             var tupleLoc = GetCoordinate("istanbul");
-            Console.WriteLine(String.Format("{0} coordinate is lat: {1} - long: {2}", tupleLoc.locationName, tupleLoc.lat, tupleLoc.long));
+            Console.WriteLine(String.Format("{0} koordinatları enlem: {1} - boylam: {2}", tupleLoc.locationName, tupleLoc.lat, tupleLoc.lng));
 
             Console.ReadKey();
         }
-        private static (double lat, double long, string locationName) GetCoordinate(string locationName)
+        private static (double lat, double lng, string locationName) GetCoordinate(string locationName)
         {
             // https://www.latlong.net/place/istanbul-turkey-2242.html
             return (41.015137, 28.979530, locationName);
